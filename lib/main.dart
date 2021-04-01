@@ -13,19 +13,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Blog da lua',
       theme: ThemeData(
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kBgColor,
         elevatedButtonTheme: ElevatedButtonThemeData(
-          style: TextButton.styleFrom(backgroundColor: kPrimaryColor) 
-          ),
-          textTheme: TextTheme(
-            bodyText1: TextStyle(color: kBodyTextColor),
-            bodyText2: TextStyle(color: kBodyTextColor),
-            headline5: TextStyle(color: kDarkBlackColor),
-          ),
+            style: TextButton.styleFrom(backgroundColor: kPrimaryColor)),
+        textTheme: TextTheme(
+          bodyText1: TextStyle(color: kBodyTextColor),
+          bodyText2: TextStyle(color: kBodyTextColor),
+          headline5: TextStyle(color: kDarkBlackColor),
         ),
+      ),
       home: MainScreen(),
     );
   }
