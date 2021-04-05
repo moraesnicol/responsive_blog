@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_blog/constants.dart';
@@ -44,10 +42,8 @@ class WebMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:
-          EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      padding: EdgeInsets.symmetric(
-          vertical: kDefaultPadding / 2),
+      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
       decoration: BoxDecoration(
           border: Border(
               bottom: BorderSide(
@@ -55,10 +51,8 @@ class WebMenu extends StatelessWidget {
         width: 3,
       ))),
       child: Text(
-        'Blog',
-        style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w600),
+        'Bloggg',
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
       ),
     );
   }
