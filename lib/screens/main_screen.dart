@@ -1,58 +1,31 @@
+  
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:responsive_blog/constants.dart';
+import 'package:get/get.dart';
+import 'package:responsive_blog/controllers/MenuController.dart';
+
+import '../../constants.dart';
+import 'components/header.dart';
+import 'components/home_screen.dart';
+import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
+  final MenuController _controller = Get.put(MenuController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-              width: double.infinity,
-              color: kDarkBlackColor,
-              child: SafeArea(
-                  child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(kDefaultPadding),
-                    constraints: BoxConstraints(maxWidth: kMaxWidth),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset("assets/icons/logo.svg"),
-                        Spacer(),
-                        WebMenu(),
-                        Spacer(),
-                      ],
-                    ),
-                  )
-                ],
-              )))
-        ],
-      ),
-    );
-  }
-}
-
-class WebMenu extends StatelessWidget {
-  const WebMenu({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
-      decoration: BoxDecoration(
-          border: Border(
-              bottom: BorderSide(
-        color: kPrimaryColor,
-        width: 3,
-      ))),
-      child: Text(
-        'Bloggg',
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+      key: _controller.scaffoldkey,
+      drawer: SideMenu(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Header(),
+            Container(
+              padding: EdgeInsets.all(kDefaultPadding),
+              constraints: BoxConstraints(maxWidth: kMaxWidth),
+              child: SafeArea(child: HomeScreen()),
+            ),
+          ],
+        ),
       ),
     );
   }
